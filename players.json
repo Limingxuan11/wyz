@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1696123456789,
+    "name": "李铭轩",
+    "avatar": "",
+    "position": "中场",
+    "abilities": {
+      "shooting": 82,
+      "passing": 88,
+      "defending": 75,
+      "pace": 78,
+      "awareness": 90,
+      "dribbling": 85,
+      "workRate": 92,
+      "physical": 80
+    },
+    "preferredFoot": "右脚",
+    "fitness": "健康",
+    "traits": "视野开阔，长传精准，定位球高手",
+    "createdAt": "2023-10-01T08:00:00.000Z",
+    "history": [
+      { "date": "2023-10-01T08:00:00.000Z", "overall": 83.8 }
+    ]
+  },
+  {
+    "id": 1696123456790,
+    "name": "王紫藤",
+    "avatar": "",
+    "position": "前锋",
+    "abilities": {
+      "shooting": 90,
+      "passing": 70,
+      "defending": 45,
+      "pace": 94,
+      "awareness": 80,
+      "dribbling": 88,
+      "workRate": 85,
+      "physical": 78
+    },
+    "preferredFoot": "左脚",
+    "fitness": "健康",
+    "traits": "速度极快，射术精湛，反越位意识强",
+    "createdAt": "2023-10-02T08:00:00.000Z",
+    "history": [
+      { "date": "2023-10-02T08:00:00.000Z", "overall": 78.8 }
+    ]
+  }
+]
