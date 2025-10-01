@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四川大学吴玉章哲学联队 - 球员战力系统</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>四川大学吴玉章哲学联队</h1>
+        <h2>球员战力值管理系统</h2>
+        
+        <div class="login-options">
+            <button onclick="showAdminLogin()" class="login-btn admin-btn">管理员登录</button>
+            <button onclick="guestLogin()" class="login-btn guest-btn">游客访问</button>
+        </div>
+        
+        <div id="adminLoginForm" class="login-form hidden">
+            <h3>管理员登录</h3>
+            <input type="text" id="adminUsername" placeholder="账号">
+            <input type="password" id="adminPassword" placeholder="密码">
+            <button onclick="adminLogin()">登录</button>
+            <button onclick="hideAdminLogin()">返回</button>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
