@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员 - 球员战力管理系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>四川大学吴玉章哲学联队 - 管理员系统</h1>
+        <div class="user-info">
+            <span>欢迎，<span id="username"></span></span>
+            <button onclick="logout()" class="logout-btn">退出登录</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('players')">球员管理</div>
+            <div class="tab" onclick="showTab('ranking')">排行榜</div>
+            <div class="tab" onclick="showTab('add')">添加球员</div>
+        </div>
+
+        <!-- 球员管理标签页 -->
+        <div id="players" class="tab-content active">
+            <h2>球员列表</h2>
+            <div id="playerList" class="player-grid"></div>
+        </div>
+
+        <!-- 排行榜标签页 -->
+        <div id="ranking" class="tab-content">
+            <h2>球员战力排行榜</h2>
+            <div id="rankingContainer"></div>
+        </div>
+
+        <!-- 添加球员标签页 -->
+        <div id="add" class="tab-content">
+            <h2>添加新球员</h2>
+            <form id="addPlayerForm" class="admin-form">
+                <div class="form-group">
+                    <label>球员姓名</label>
+                    <input type="text" id="playerName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>头像URL</label>
+                    <input type="text" id="playerAvatar" placeholder="留空使用默认头像">
+                </div>
+                
+                <div class="form-group">
+                    <label>位置</label>
+                    <select id="playerPosition" required>
+                        <option value="">请选择位置</option>
+                        <option value="前锋">前锋</option>
+                        <option value="中场">中场</option>
+                        <option value="后卫">后卫</option>
+                        <option value="守门员">守门员</option>
+                    </select>
+                </div>
+
+                <h3>能力值（0-100）</h3>
+                <div class="form-group">
+                    <label>射门</label>
+                    <input type="number" id="shooting" min="0" max="100" value="50">
+                </div>
+                <div class="form-group">
+                    <label>传球</label>
+                    <input type="number" id="passing" min="0" max="100" value="50">
+                </div>
+                <div class="form-group">
+                    <label>拦截</label>
+                    <input type="number" id="defending" min="0" max="100" value="50">
+                </div>
+                <div class="form-group">
+                    <label>速度</label>
+                    <input type="number" id="pace" min="0" max="100" value="50">
+                </div>
+                <div class="form-group">
+                    <label>意识</label>
+                    <input type="number" id="awareness" min="0" max="100" value="50">
+                </div>
+                <div class="form-group">
+                    <label>盘带</label>
+                    <input type="number" id="dribbling" min="0" max="100" value="50">
+                </div>
+                <div class="form-group">
+                    <label>积极性</label>
+                    <input type="number" id="workRate" min="0" max="100" value="50">
+                </div>
+                <div class="form-group">
+                    <label>身体</label>
+                    <input type="number" id="physical" min="0" max="100" value="50">
+                </div>
+                
+                <div class="form-group">
+                    <label>惯用脚</label>
+                    <select id="preferredFoot">
+                        <option value="右脚">右脚</option>
+                        <option value="左脚">左脚</option>
+                        <option value="双脚">双脚</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>健康状态</label>
+                    <select id="fitness">
+                        <option value="健康">健康</option>
+                        <option value="轻伤">轻伤</option>
+                        <option value="重伤">重伤</option>
+                        <option value="恢复中">恢复中</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>特性描述</label>
+                    <textarea id="traits" placeholder="描述球员的特殊能力和特点..."></textarea>
+                </div>
+
+                <button type="submit" class="btn">添加球员</button>
+                <button type="reset" class="btn btn-danger">重置</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 编辑球员模态框 -->
+    <div id="editModal" class="modal hidden">
+        <div class="modal-content">
+            <span onclick="closeEditModal()" class="close">&times;</span>
+            <h2>编辑球员信息</h2>
+            <form id="editPlayerForm" class="admin-form">
+                <!-- 表单内容 -->
+            </form>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
