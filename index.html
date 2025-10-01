@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四川大学吴玉章哲学联队 - 球员战力系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>四川大学吴玉章哲学联队 - 球员战力系统</h1>
+        <div class="user-info">
+            <span>欢迎，<span id="username"></span></span>
+            <button onclick="logout()" class="logout-btn">退出登录</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('home')">首页</div>
+            <div class="tab" onclick="showTab('players')">球员列表</div>
+            <div class="tab" onclick="showTab('ranking')">战力排行榜</div>
+            <div id="adminTab" class="tab hidden" onclick="showTab('admin')">管理面板</div>
+        </div>
+
+        <!-- 首页标签页 -->
+        <div id="home" class="tab-content active">
+            <div class="welcome-section">
+                <h2>欢迎来到四川大学吴玉章哲学联队球员战力系统</h2>
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h3>球员总数</h3>
+                        <p id="totalPlayers">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>平均战力</h3>
+                        <p id="avgRating">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>最高战力</h3>
+                        <p id="maxRating">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>最近更新</h3>
+                        <p id="lastUpdate">暂无</p>
+                    </div>
+                </div>
+                
+                <div class="quick-actions">
+                    <h3>快捷操作</h3>
+                    <button onclick="showTab('ranking')" class="btn">查看排行榜</button>
+                    <button onclick="showTab('players')" class="btn">浏览球员</button>
+                    <button id="addPlayerBtn" onclick="window.location.href='admin.html#add'" class="btn hidden">添加球员</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 球员列表标签页 -->
+        <div id="players" class="tab-content">
+            <h2>球员列表</h2>
+            <div id="playerList" class="player-grid"></div>
+        </div>
+
+        <!-- 排行榜标签页 -->
+        <div id="ranking" class="tab-content">
+            <h2>球员战力排行榜</h2>
+            <div id="rankingContainer"></div>
+        </div>
+
+        <!-- 管理面板标签页（仅管理员可见） -->
+        <div id="admin" class="tab-content">
+            <h2>管理面板</h2>
+            <div class="admin-actions">
+                <button onclick="window.location.href='admin.html'" class="btn">进入完整管理界面</button>
+                <button onclick="exportData()" class="btn">导出数据</button>
+                <button onclick="importData()" class="btn">导入数据</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
