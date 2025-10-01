@@ -1,1 +1,1 @@
-
+const defaultAvatar = 'https://cdn.jsdelivr.net/gh/mvp-rockets/default-avatar@main/default-avatar.png';
